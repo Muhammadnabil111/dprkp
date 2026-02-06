@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/banten.svg" type="image/svg+xml">
+    <title>Dinas PRKP Provinsi Banten</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="topbar-left">
+                <h5>Personalisasi</h5>
+            </div>
+
+            <div class="topbar-right">
+                <div class="theme-switch">
+                    <button id="themeSwitch" class="switch" aria-label="Toggle theme">
+                        <span class="knob">
+                            <i class="fa-solid fa-sun"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <header>
+        <div class="nav">
+            <div class="brand">
+                <img src="img/banten.svg" alt="Logo DPRKP Banten">
+                <h1>DINAS PRKP PROVINSI BANTEN</h1>
+            </div>
+
+            <ul class="nav-menu">
+                <li>Home</li>
+                <li class="has-dropdown">Profil
+                    <ul class="dropdown">
+                        <li>Visi &amp; Misi</li>
+                        <li>Tugas Pokok &amp; Fungsi</li>
+                        <li>Struktur Organisasi</li>
+                        <li>Gambaran Umum</li>
+                        <li>Data Statistik Pegawai</li>
+                        <li>Nominatif ASN &amp; Non ASN</li>
+                        <li>Kontak Kami</li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">Uraian Tugas
+                    <ul class="dropdown">
+                        <li>Berita</li>
+                        <li>Agenda</li>
+                        <li>Pengumuman</li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">Publikasi
+                    <ul class="dropdown">
+                        <li>Berita</li>
+                        <li>Agenda</li>
+                        <li>Pengumuman</li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">Regulasi
+                    <ul class="dropdown">
+                        <li>Berita</li>
+                        <li>Agenda</li>
+                        <li>Pengumuman</li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">Gallery
+                    <ul class="dropdown">
+                        <li>Berita</li>
+                        <li>Agenda</li>
+                        <li>Pengumuman</li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">PPID
+                    <ul class="dropdown">
+                        <li>Berita</li>
+                        <li>Agenda</li>
+                        <li>Pengumuman</li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">Sakip
+                    <ul class="dropdown">
+                        <li>Berita</li>
+                        <li>Agenda</li>
+                        <li>Pengumuman</li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">Data
+                    <ul class="dropdown">
+                        <li>Berita</li>
+                        <li>Agenda</li>
+                        <li>Pengumuman</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+
+    <section class="hero">
+        <div class="bento">
+            <div class="bento-main">
+                <h2>Perumahan Layak dan Kawasan Permukiman Berkelanjutan</h2>
+                <p>Menyediakan informasi dan layanan publik perumahan rakyat Provinsi Banten.</p>
+                <div class="cta">
+                    <a class="btn btn-primary">Eksplor Program</a>
+                    <a class="btn btn-outline">Peta Interaktif</a>
+                </div>
+            </div>
+            <div class="bento-side top"><span>Program Prioritas</span>
+                <h4>RTLH &amp; Rusun</h4>
+            </div>
+            <div class="bento-side bottom"><span>Peta Interaktif</span>
+                <h4>Sebaran Perumahan</h4>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-program">
+        <div class="section-inner">
+            <h3>Program Prioritas</h3>
+            <div class="programs">
+                <div class="program">
+                    <div class="program-media">
+                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" alt="Rusun">
+                        <div class="program-overlay">
+                            <small>Program</small>
+                            <h4>RTLH</h4>
+                        </div>
+                    </div>
+
+                    <div class="program-action">
+                        <span>Read more</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+                <div class="program">
+                    <div class="program-media">
+                        <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471" alt="Rusun">
+                        <div class="program-overlay">
+                            <small>Program</small>
+                            <h4>Rusun</h4>
+                        </div>
+                    </div>
+
+                    <div class="program-action">
+                        <span>Read more</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+                <div class="program">
+                    <div class="program-media">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914" alt="Rusun">
+                        <div class="program-overlay">
+                            <small>Program</small>
+                            <h4>PSU</h4>
+                        </div>
+                    </div>
+
+                    <div class="program-action">
+                        <span>Read more</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+                <div class="program">
+                    <div class="program-media">
+                        <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba" alt="Rusun">
+                        <div class="program-overlay">
+                            <small>Program</small>
+                            <h4>Kawasan Kumuh</h4>
+                        </div>
+                    </div>
+
+                    <div class="program-action">
+                        <span>Read more</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-news">
+        <h3>Berita &amp; Artikel</h3>
+        <div class="news">
+            <div class="news-card">
+                <h4>Program RTLH 2026 Dimulai</h4><span>12 Januari 2026</span>
+            </div>
+            <div class="news-card">
+                <h4>Penanganan Kawasan Kumuh</h4><span>10 Januari 2026</span>
+            </div>
+            <div class="news-card">
+                <h4>Pembangunan Rusun Baru</h4><span>8 Januari 2026</span>
+            </div>
+            <div class="news-card">
+                <h4>Evaluasi Program 2025</h4><span>5 Januari 2026</span>
+            </div>
+            <div class="news-card">
+                <h4>Digitalisasi Data Perumahan</h4><span>2 Januari 2026</span>
+            </div>
+            <div class="news-card">
+                <h4>Kolaborasi Pemerintah Daerah</h4><span>30 Desember 2025</span>
+            </div>
+            <div class="news-card">
+                <h4>Realisasi Rumah Rakyat</h4><span>16 Desember 2025</span>
+            </div>
+            <div class="news-card">
+                <h4>Peresmian Rumah Subsidi</h4><span>1 Desember 2025</span>
+            </div>
+        </div>
+    </section>
+    <section class="section-related">
+        <h3>Sumber Terkait</h3>
+
+        <div class="related">
+            <a href="#" class="related-card">
+                <img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818" alt="E-PPID">
+                <div class="related-overlay">
+                    <h4>E-PPID</h4>
+                </div>
+            </a>
+
+            <a href="#" class="related-card">
+                <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3" alt="Lapor">
+                <div class="related-overlay">
+                    <h4>Lapor.GO</h4>
+                </div>
+            </a>
+
+            <a href="#" class="related-card">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df" alt="Informasi Berkala">
+                <div class="related-overlay">
+                    <h4>Informasi Berkala</h4>
+                </div>
+            </a>
+
+            <a href="#" class="related-card">
+                <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786" alt="Informasi Serta Merta">
+                <div class="related-overlay">
+                    <h4>Informasi Serta Merta</h4>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="section-region">
+        <div class="region-logos">
+            <div class="logo-item"><img src="img/cile.svg" alt="Kabupaten Serang" /></div>
+            <div class="logo-item"><img src="img/lebak.svg" alt="Kota Serang" /></div>
+            <div class="logo-item"><img src="img/pandeg.svg" alt="Kabupaten Tangerang" /></div>
+            <div class="logo-item"><img src="img/sera.svg" alt="Kota Tangerang" /></div>
+            <div class="logo-item"><img src="img/seran.svg" alt="Kota Tangerang Selatan" /></div>
+            <div class="logo-item"><img src="img/tange.png" alt="Kota Cilegon" /></div>
+            <div class="logo-item"><img src="img/tanger.svg" alt="Kabupaten Lebak" /></div>
+            <div class="logo-item"><img src="img/tangsel.svg" alt="Kabupaten Pandeglang" /></div>
+        </div>
+    </section>
+
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <!-- LEFT -->
+            <div class="footer-left">
+                <div class="footer-brand">
+                    <img src="img/banten.svg" alt="Logo Dinas Perkim Banten">
+                    <h4><b>DINAS PRKP Provinsi Banten</b></h4>
+                </div>
+
+                <p class="footer-slogan">
+                    Dinas Perumahan Rakyat dan Kawasan Pemukiman Provinsi Banten
+                </p>
+
+                <p class="footer-address">
+                    Kawasan Pusat Pemerintahan Provinsi Banten (KP3B) <br>Jl. Syekh Nawawi Al-Bantani, Serang-Banten
+                </p>
+            </div>
+
+            <!-- RIGHT - MAP -->
+            <div class="footer-related footer-info-terkait">
+                <h4>Info Terkait</h4>
+                <ul class="related-list">
+                    <li><a href="#">Berita</a></li>
+                    <li><a href="#">Artikel</a></li>
+                    <li><a href="#">Buku</a></li>
+                    <li><a href="#">Leaflet</a></li>
+                </ul>
+            </div>
+            
+            <!-- RIGHT - MAP -->
+            <div class="footer-related footer-web-terkait">
+                <h4>Situs Terkait</h4>
+                <ul class="related-list">
+                    <li><a href="#">Lapor.GO</a></li>
+                    <li><a href="#">Bappenas (OGI)</a></li>
+                    <li><a href="#">E-PPID</a></li>
+                    <li><a href="#">WBS Banten</a></li>
+                </ul>
+            </div>
+            
+            <!-- RIGHT - CONTACT -->
+            <div class="footer-right">
+                <h4>Get In Touch</h4>
+
+                <div class="footer-social">
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+
+                <div class="footer-contact">
+                    <p><i class="fa-solid fa-envelope"></i> perkim@bantenprov.go.id</p>
+                    <p><i class="fa-solid fa-square-phone"></i> (0254) 267005</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Made with 💖 with <i class="fa-brands fa-square-js"></i> | Dinas PRKP Provinsi Banten
+        </div>
+    </footer>
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
