@@ -1045,6 +1045,9 @@ section h3 {
 
 /* Large screens (iMac and above) */
 @media (min-width: 1600px) {
+  .hero {
+        max-height: 1200px; /* Cap the height on ultra-wide screens */
+    }
     
   .topbar-inner {
     max-width: 1600px;
