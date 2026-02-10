@@ -324,7 +324,7 @@ header {
 
 /* ================= HERO / BENTO ================= */
 .hero {
-    min-height: 110vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
 }
@@ -1045,6 +1045,7 @@ section h3 {
 
 /* Large screens (iMac and above) */
 @media (min-width: 1600px) {
+    
   .topbar-inner {
     max-width: 1600px;
   }
