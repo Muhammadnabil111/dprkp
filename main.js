@@ -57,8 +57,4 @@ if (backToTop) {
   });
 }
 
-// ================= MAP (LEAFLET) =================
-if (document.getElementById('map')) {
-  const map = L.map('map').setView([-6.2, 106.0], 8);
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(map);
-}
+

@@ -49,30 +49,7 @@ a {
 }
 
 
-.theme-toggle{
-  width:32px;
-  height:32px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
 
-  background:transparent;
-  border:1px solid var(--border);
-  color:var(--text);
-  cursor:pointer;
-
-  transition:all .25s ease;
-}
-
-.theme-toggle:hover{
-  background:rgba(255,255,255,0.06);
-  transform:translateY(-1px);
-}
-
-.theme-toggle i{
-  font-size:14px;
-}
 
 .theme-switch{
   display:flex;
@@ -1063,5 +1040,28 @@ section h3 {
 
   .logo-item img{
     max-height:50px;
+  }
+}
+
+/* Large screens (iMac and above) */
+@media (min-width: 1600px) {
+  .topbar-inner {
+    max-width: 1600px;
+  }
+
+  .nav {
+    max-width: 1600px;
+  }
+
+  section {
+    max-width: 1600px;
+  }
+
+  .region-logos {
+    max-width: 1600px;
+  }
+
+  .footer-inner {
+    max-width: 1600px;
   }
 }
