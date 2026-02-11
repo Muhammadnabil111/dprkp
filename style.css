@@ -1176,7 +1176,7 @@ section h3 {
   }
 
   .hero-banner-content h1{
-    font-size:24px;      /* ⬅️ judul kecil */
+    font-size:18px;      /* ⬅️ judul kecil */
     line-height:1.4;
     max-width:100%;
   }
@@ -1464,4 +1464,5 @@ section h3 {
     .footer-bottom {
         font-size: 0.75rem;
     }
+
 }
