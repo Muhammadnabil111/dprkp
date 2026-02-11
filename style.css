@@ -464,28 +464,47 @@ header {
     gap: 24px;
 }
 
-.bento-main {
-    grid-row: 1 / span 2;
-    position: relative;
-    background: url("https://images.unsplash.com/photo-1505691938895-1758d7feb511") center/cover;
-    border-radius: 18px;
-    padding: 64px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    overflow: hidden;
+/* MAIN di kolom 1, span 2 baris */
+.bento-main{
+  grid-column: 1 / 2;
+  grid-row: 1 / span 2;
 }
 
-.bento-main::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(11, 15, 20, 0.3), rgba(11, 15, 20, 0.95));
+/* SIDE TOP di kolom 2, baris 1 */
+.bento-side.top{
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
 }
 
-.bento-main > * {
-    position: relative;
-    z-index: 2;
+/* SIDE BOTTOM di kolom 2, baris 2 */
+.bento-side.bottom{
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.bento-main{
+  position:relative;
+  background: url("https://images.unsplash.com/photo-1505691938895-1758d7feb511") center/cover;
+  border-radius:18px;
+  padding:64px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  overflow:hidden;
+}
+
+.bento-main::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(11,15,20,0.3), rgba(11,15,20,0.95));
+}
+
+.bento-main .bento-content,
+.bento-main h2,
+.bento-main p{
+  position:relative;
+  z-index:2;
 }
 
 .bento-main h2 {
@@ -501,34 +520,39 @@ header {
     margin-bottom: 32px;
 }
 
-.bento-side {
-    position: relative;
-    border-radius: 18px;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    overflow: hidden;
+/* side */
+.bento-side{
+  position:relative;
+  border-radius:18px;
+  padding:32px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  overflow:hidden;
 }
 
-.bento-side::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(11, 15, 20, 0.4), rgba(11, 15, 20, 0.85));
+.bento-side::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(11,15,20,0.4), rgba(11,15,20,0.85));
+}
+
+.bento-side.top{
+  background: url("https://images.unsplash.com/photo-1580587771525-78b9dba3b914") center/cover;
+}
+.bento-side.bottom{
+  background: url("https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba") center/cover;
+}
+
+/* hide mobile image wrappers on desktop */
+.bento-img{
+  display:none;
 }
 
 .bento-side > * {
     position: relative;
     z-index: 2;
-}
-
-.bento-side.top {
-    background: url("https://images.unsplash.com/photo-1580587771525-78b9dba3b914") center/cover;
-}
-
-.bento-side.bottom {
-    background: url("https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba") center/cover;
 }
 
 .bento-side span {
@@ -1036,6 +1060,147 @@ section h3 {
     z-index: 10000;
 }
 
+/* ================= HERO BENTO - MOBILE MODE ================= */
+@media (max-width: 768px){
+
+  .hero{
+    min-height:auto;
+    padding:24px 16px;
+  }
+
+  .bento{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  /* ================= MAIN (SUDAH BENAR) ================= */
+  .bento-main{
+    background:none;
+    padding:0;
+  }
+
+  .bento-main::before{
+    display:none;
+  }
+
+  .bento-img.main-img{
+    display:block;
+    width:100%;
+    height:180px;
+    border-radius:14px;
+    background:url("https://images.unsplash.com/photo-1505691938895-1758d7feb511") center/contain no-repeat;
+    background-size: cover;
+    background-color:#000;
+  }
+
+  .bento-main .bento-content{
+    padding:10px 8px 0;   /* kasih jarak kiri kanan */
+  }
+
+  .bento-main h2{
+    font-size:14px;
+    margin:8px 0 6px;
+    color:var(--text);
+  }
+
+  .bento-main p{
+    font-size:12px;
+    margin-bottom:8px;
+    color:var(--muted);
+  }
+
+
+  /* ================= SIDE FIX ================= */
+  .bento-side{
+    background:none;
+    padding:0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .bento-side::before{
+    display:none;
+  }
+
+  /* RESET posisi grid desktop */
+  .bento-main,
+  .bento-side.top,
+  .bento-side.bottom{
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+  }
+
+ .bento-img.side-img-top,
+  .bento-img.side-img-bottom{
+    display:block;
+    width:100%;
+    height:140px;               /* SAMAKAN TINGGI */
+    border-radius:14px;
+    background-size:cover;     /* ⬅️ FULL TANPA GEPENG */
+    background-position:center;
+  }
+  .bento-side .bento-content{
+    padding:8px 8px 0;    /* jarak kiri kanan biar rapi */
+  }
+
+  .bento-side span{
+    font-size:11px;
+    color:var(--muted);
+    display:block;
+  }
+
+  .bento-side h4{
+    font-size:14px;
+    margin:4px 0 8px;
+    color:var(--text);
+    line-height:1.3;
+  }
+}
+
+@media (max-width: 768px){
+
+  .hero-banner{
+    min-height:55vh;      /* ⬅️ tidak full layar */
+    align-items:flex-end;
+    padding:24px 0;
+  }
+
+  .hero-banner-bg{
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.9)),
+      url('img/banner.jpg') center/cover no-repeat;
+  }
+
+  .hero-banner-content{
+    padding:0 16px;
+  }
+
+  .hero-banner-content h1{
+    font-size:24px;      /* ⬅️ judul kecil */
+    line-height:1.4;
+    max-width:100%;
+  }
+
+  .hero-banner-content p{
+    font-size:12px;      /* ⬅️ paragraf kecil */
+    margin-top:8px;
+    max-width:100%;
+    color:#e5e7eb;
+  }
+
+  .hero-banner::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:80px;
+  background:linear-gradient(to bottom, rgba(0,0,0,0), var(--bg));
+}
+
+}
+
+
 /* Responsive */
 @media (max-width: 900px) {
     .related {
@@ -1051,7 +1216,7 @@ section h3 {
 
 @media (max-width: 768px) {
     .footer-inner {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 2fr 1fr;
     }
 
     .footer-left,
@@ -1152,10 +1317,6 @@ section h3 {
 }
 
 @media (max-width: 900px) {
-    .bento {
-        grid-template-columns: 1fr;
-        padding: 96px 24px;
-    }
 
     .programs,
     .news {
