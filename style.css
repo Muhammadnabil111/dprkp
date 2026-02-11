@@ -555,16 +555,14 @@ header {
     z-index: 2;
 }
 
-.bento-side span {
-    font-size: 0.75rem;
+.bento-side .bento-content span {
     color: #fff;
     text-transform: uppercase;
 }
 
-.bento-side h4 {
+.bento-side .bento-content h4 {
     color: #fff;
     margin-top: 8px;
-    font-size: 1.3rem;
 }
 
 /* ================= BUTTON ================= */
@@ -1160,7 +1158,7 @@ section h3 {
 @media (max-width: 768px){
 
   .hero-banner{
-    min-height:55vh;      /* ⬅️ tidak full layar */
+    min-height:75vh;      /* ⬅️ tidak full layar */
     align-items:flex-end;
     padding:24px 0;
   }
@@ -1176,7 +1174,7 @@ section h3 {
   }
 
   .hero-banner-content h1{
-    font-size:18px;      /* ⬅️ judul kecil */
+    font-size:22px;      /* ⬅️ judul kecil */
     line-height:1.4;
     max-width:100%;
   }
@@ -1200,18 +1198,152 @@ section h3 {
 
 }
 
+@media (max-width: 768px){
 
-/* Responsive */
-@media (max-width: 900px) {
-    .related {
-        grid-template-columns: 1fr 1fr;
-    }
+  .site-footer{
+    padding:40px 16px 24px;   /* ⬅️ footer lebih pendek */
+  }
+
+  .footer-inner{
+    grid-template-columns:1fr;  /* stack vertikal */
+    gap:28px;
+  }
+
+  /* Judul kecil */
+  .footer-left h4,
+  .footer-related h4,
+  .footer-right h4{
+    font-size:14px;
+    margin-bottom:8px;
+  }
+
+  /* Teks kecil */
+  .footer-slogan,
+  .footer-address,
+  .footer-contact p,
+  .related-list li a{
+    font-size:12px;
+    line-height:1.5;
+  }
+
+  /* Logo lebih kecil */
+  .footer-brand img{
+    height:28px;
+  }
+
+  /* Info Terkait + Situs Terkait sejajar */
+  .footer-info-terkait,
+  .footer-web-terkait{
+    width:100%;
+  }
+
+  .footer-info-terkait .related-list,
+  .footer-web-terkait .related-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;  /* 2 kolom */
+    gap:6px 12px;
+  }
+
+  /* Social icon diperkecil */
+  .social-icon{
+    width:32px;
+    height:32px;
+    font-size:14px;
+  }
+
+  .footer-bottom{
+    font-size:11px;
+    text-align:center;
+    margin-top:24px;
+    line-height:1.4;
+  }
 }
 
-@media (max-width: 480px) {
-    .related {
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 768px){
+
+  .section-region{
+    padding:40px 16px;   /* lebih ringkas */
+  }
+
+  .region-logos{
+    grid-template-columns:repeat(4, 1fr);  /* 4 kolom */
+    gap:16px;
+  }
+
+  .logo-item{
+    padding:8px;
+  }
+
+  .logo-item img{
+    max-width:60px;   /* ⬅️ logo diperkecil di mobile */
+    filter: grayscale(0%);
+  }
+}
+
+@media (max-width: 768px){
+
+  .section-program,
+  .section-news,
+  .section-related{
+    padding:40px 16px;  /* lebih ringkas */
+  }
+
+  .section-program h3,
+  .section-news h3,
+  .section-related h3{
+    font-size:14px;     /* judul kecil */
+    margin-bottom:20px;
+  }
+
+  /* PROGRAM */
+  .programs{
+    grid-template-columns:1fr;  /* 1 kolom */
+    gap:16px;
+  }
+
+  .program-media{
+    height:160px; /* gambar lebih kecil */
+  }
+
+  .program-overlay h4{
+    font-size:14px;
+  }
+
+  .program-overlay small{
+    font-size:11px;
+  }
+
+  .program-action{
+    font-size:12px;
+  }
+
+  /* NEWS */
+  .news{
+    grid-template-columns:1fr 1fr; /* 2 kolom */
+    gap:16px;
+  }
+
+  .news-card h4{
+    font-size:13px;
+  }
+
+  .news-card span{
+    font-size:12px;
+  }
+
+  /* RELATED */
+  .related{
+    grid-template-columns:repeat(2, 1fr); /* ⬅️ 2 kolom = 2x2 */
+    gap:16px;
+  }
+
+  .related-card{
+    height:120px;  /* lebih pendek di mobile */
+  }
+
+  .related-overlay h4{
+    font-size:12px; /* judul kecil */
+  }
 }
 
 @media (max-width: 768px) {
@@ -1464,5 +1596,4 @@ section h3 {
     .footer-bottom {
         font-size: 0.75rem;
     }
-
 }
