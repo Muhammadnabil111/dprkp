@@ -1,24 +1,3 @@
-// ================= HAMBURGER + NAV =================
-const hamburger = document.getElementById("hamburgerBtn");
-const navMenu = document.querySelector(".nav-menu");
-const dropdownParents = document.querySelectorAll(".has-dropdown");
-
-if (hamburger && navMenu) {
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("open");
-  });
-}
-
-dropdownParents.forEach((item) => {
-  item.addEventListener("click", (e) => {
-    if (window.innerWidth <= 768) {
-      e.stopPropagation();
-      item.classList.toggle("open");
-    }
-  });
-});
-
 // ================= THEME HANDLER =================
 const themeSwitch = document.getElementById("themeSwitch");
 const htmlEl = document.documentElement;
@@ -72,3 +51,24 @@ window.addEventListener("scroll", () => {
     header.style.top = "0px";
   }
 });
+
+
+  const hamburger = document.getElementById('hamburgerBtn');
+  const navMenu = document.querySelector('.nav-menu');
+  const dropdownParents = document.querySelectorAll('.has-dropdown');
+
+  // Toggle main menu
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('open');
+  });
+
+  // Toggle dropdown on mobile
+  dropdownParents.forEach(item => {
+    item.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.stopPropagation();
+        item.classList.toggle('open');
+      }
+    });
+  });
