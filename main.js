@@ -52,6 +52,26 @@ window.addEventListener("scroll", () => {
   }
 });
 
+document.querySelector('.search-box').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const keyword = this.querySelector('input').value;
+
+  console.log('Cari:', keyword);
+
+  // nanti bisa kamu arahkan ke:
+  // - filter berita
+  // - redirect halaman search
+});
+
+const tags = document.querySelectorAll('.popular-tags .tag');
+const input = document.querySelector('.search-box input');
+
+tags.forEach(tag => {
+  tag.addEventListener('click', () => {
+    input.value = tag.textContent;
+    input.focus();
+  });
+});
 
   const hamburger = document.getElementById('hamburgerBtn');
   const navMenu = document.querySelector('.nav-menu');
