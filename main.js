@@ -58,7 +58,7 @@ document.querySelector('.search-box').addEventListener('submit', function(e) {
 
   console.log('Cari:', keyword);
 
-  // nanti bisa kamu arahkan ke:
+  // bisa arahkan ke:
   // - filter berita
   // - redirect halaman search
 });
@@ -73,6 +73,51 @@ tags.forEach(tag => {
   });
 });
 
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+
+let index = 0;
+
+function showSlide(i) {
+  slides.forEach(s => s.classList.remove('active'));
+  dots.forEach(d => d.classList.remove('active'));
+
+  slides[i].classList.add('active');
+  dots[i].classList.add('active');
+}
+
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    index = i;
+    showSlide(index);
+  });
+});
+
+setInterval(() => {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+}, 5000);
+
+const prevBtn = document.querySelector('.slider-arrow.prev');
+const nextBtn = document.querySelector('.slider-arrow.next');
+
+prevBtn.addEventListener('click', () => {
+  index = (index - 1 + slides.length) % slides.length;
+  showSlide(index);
+});
+
+nextBtn.addEventListener('click', () => {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+});
+
+function showSlide(i) {
+  document.querySelector('.slides').style.transform = `translateX(-${i * 100}%)`;
+
+  dots.forEach(d => d.classList.remove('active'));
+  dots[i].classList.add('active');
+}
+
   const hamburger = document.getElementById('hamburgerBtn');
   const navMenu = document.querySelector('.nav-menu');
   const dropdownParents = document.querySelectorAll('.has-dropdown');
@@ -83,11 +128,20 @@ tags.forEach(tag => {
     navMenu.classList.toggle('open');
   });
 
-  // Toggle dropdown on mobile
+// Toggle dropdown on mobile & tablet
   dropdownParents.forEach(item => {
     item.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768) {
+      // Mengubah 768 menjadi 1024 agar sinkron dengan media query CSS
+      if (window.innerWidth <= 1024) { 
         e.stopPropagation();
+        
+        // Opsional: Tutup menu lain jika satu menu sedang dibuka
+        dropdownParents.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('open');
+          }
+        });
+
         item.classList.toggle('open');
       }
     });

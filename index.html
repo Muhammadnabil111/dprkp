@@ -141,34 +141,59 @@
         <section class="hero">
   <div class="bento">
 
-    <!-- MAIN BENTO -->
-    <div class="bento-main">
-      <div class="bento-img main-img"></div>
+    <!-- MAIN BENTO (SLIDER) -->
+    <div class="bento-main slider">
 
-      <div class="bento-content">
-        <h2>Perumahan Layak dan Kawasan Permukiman Berkelanjutan</h2>
-        <p>Menyediakan informasi dan layanan publik perumahan rakyat Provinsi Banten.</p>
+      <div class="slides">
+        <div class="slide active">
+          <div class="bento-img main-img"></div>
+        </div>
+
+        <div class="slide">
+          <div class="bento-img main-img-2"></div>
+        </div>
+
+        <div class="slide">
+          <div class="bento-img main-img-3"></div>
+        </div>
       </div>
+
+      <div class="slider-arrow prev">
+  <i class="fas fa-chevron-left"></i>
+</div>
+
+<div class="slider-arrow next">
+  <i class="fas fa-chevron-right"></i>
+</div>
+
+      <!-- NAV -->
+      <div class="slider-nav">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
     </div>
 
-    <!-- SIDE TOP -->
-    <div class="bento-side top">
-      <div class="bento-img side-img-top"></div>
+    <!-- SIDE WRAPPER -->
+    <div class="bento-bottom">
 
-      <div class="bento-content">
-        <span>Sambutan</span>
-        <h4>Gubernur &amp; Wakil Gubernur</h4>
+      <div class="bento-side">
+        <div class="bento-img side-img-top"></div>
+        <div class="bento-content">
+          <span>Kepala Daerah</span>
+          <h4>Gubernur &amp; Wakil Gubernur Banten</h4>
+        </div>
       </div>
-    </div>
 
-    <!-- SIDE BOTTOM -->
-    <div class="bento-side bottom">
-      <div class="bento-img side-img-bottom"></div>
-
-      <div class="bento-content">
-        <span>Kadis PRKP</span>
-        <h4>M. Rachmat Rogianto S.T., M.T</h4>
+      <div class="bento-side">
+        <div class="bento-img side-img-bottom"></div>
+        <div class="bento-content">
+          <span>Kepala Dinas PRKP Banten</span>
+          <h4>M. Rachmat Rogianto S.T., M.T</h4>
+        </div>
       </div>
+
     </div>
 
   </div>
@@ -289,7 +314,7 @@
       </form>
     </div>
     <div class="popular-search">
-  <span class="label">Pencarian populer</span>
+  <span class="label" style="font-weight:600;">Pencarian populer</span>
 
   <div class="popular-tags">
     <span class="tag">Bang Andra</span>
